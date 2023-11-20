@@ -7,8 +7,8 @@
   export let data;
 
   const paths = [
-    ["Resume", "/resume"],
-    ["Jobs List", "/jobs"],
+    ["Resume", "/auth/resume"],
+    ["Jobs List", "/auth/jobs"],
   ];
 
   const { supabase, session } = data;
