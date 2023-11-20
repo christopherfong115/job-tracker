@@ -6,7 +6,10 @@
 
   export let data;
 
-  const paths = [["Resume Review", "/resume"], [""]];
+  const paths = [
+    ["Resume", "/resume"],
+    ["Jobs List", "/jobs"],
+  ];
 
   const { supabase, session } = data;
   // $: ({ supabase, session } = data)
@@ -24,11 +27,29 @@
 
 <div>
   <div>
-    <nav>
-      <div>Home</div>
-      <ul>
-        <li />
-      </ul>
+    <nav class="flex justify-between items-center p-7 font-bold">
+      <div><a href="/">Home</a></div>
+      {#if data.session}
+        <ul class="flex gap-5">
+          {#each paths as path}
+            <li
+              class="outline px-4 py-2 rounded-2xl hover:underline hover:text-blue-500"
+            >
+              <a href={path[1]}>{path[0]}</a>
+            </li>
+          {/each}
+        </ul>
+        <form action="/logout"><button>Signout</button></form>
+      {:else}
+        <div class="flex gap-4">
+          <div class="hover:text-blue-600 hover:underline">
+            <a href="/login">Login</a>
+          </div>
+          <div class="hover:text-blue-600 hover:underline">
+            <a href="/signup">Register</a>
+          </div>
+        </div>
+      {/if}
     </nav>
   </div>
   <slot />
