@@ -25,7 +25,7 @@
   });
 </script>
 
-<div>
+<div class="bg-transparent">
   <div>
     <nav class="flex justify-between items-center p-7 font-bold">
       <div><a href="/">Home</a></div>
@@ -39,7 +39,7 @@
             </li>
           {/each}
         </ul>
-        <form action="/logout"><button>Signout</button></form>
+        <form action="/logout" method="POST"><button>Signout</button></form>
       {:else}
         <div class="flex gap-4">
           <div class="hover:text-blue-600 hover:underline">
