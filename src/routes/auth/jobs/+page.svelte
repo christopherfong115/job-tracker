@@ -10,9 +10,10 @@
 
 <div class="flex flex-col gap-2">
   <div
-    class="grid grid-cols-5 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center px-4 py-2"
+    class="grid grid-cols-6 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center px-4 py-2"
   >
     <div>Company</div>
+    <div>View</div>
     <div>Position</div>
     <div>Term</div>
     <div>Status</div>
@@ -25,9 +26,10 @@
   {:else}
     {#each jobs as job}
       <div
-        class="grid grid-cols-5 bg-slate-200 items-center max-w-screen px-4 py-2"
+        class="grid grid-cols-6 bg-slate-200 items-center max-w-screen px-4 py-2"
       >
         <div class="font-semibold">{job.company}</div>
+        <a class="font-bold" href="/auth/job/{job.jobid}">o</a>
         <div>{job.position}</div>
         <div>{job.term}</div>
         <div>{job.status}</div>
