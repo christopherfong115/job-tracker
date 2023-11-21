@@ -9,6 +9,7 @@
   const paths = [
     ["Resume", "/auth/resume"],
     ["Jobs List", "/auth/jobs"],
+    ["Interview", "/auth/interview"],
   ];
 
   const { supabase, session } = data;

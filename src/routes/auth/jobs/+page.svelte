@@ -1,21 +1,16 @@
 <script lang="ts">
-  import type { PageData } from "./$types";
+  import type { PageServerData } from "./$types";
 
-  type Job = {
-    id: number;
-    position: string;
-    term: string;
-    status: string;
-    comments: string;
-  };
-
-  export let data: PageData;
-  let { session, jobs } = data;
+  let pageSize = 10;
+  export let data: PageServerData;
+  const { jobs } = data;
+  // $: totalItems = data.jobs?.length || 1;
+  // $: totalPages = Math.ceil(totalItems / pageSize) || 10;
 </script>
 
 <div class="flex flex-col gap-2">
   <div
-    class="grid grid-cols-5 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center"
+    class="grid grid-cols-5 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center px-4 py-2"
   >
     <div>Company</div>
     <div>Position</div>
@@ -25,15 +20,34 @@
   </div>
   {#if !jobs}
     <div>No Jobs Available</div>
+  {:else if jobs.length == 0}
+    <div>You have no jobs add one here</div>
   {:else}
     {#each jobs as job}
-      <div class="grid grid-cols-5 bg-slate-200 items-center max-w-screen">
-        <div class="">{job.company}</div>
+      <div
+        class="grid grid-cols-5 bg-slate-200 items-center max-w-screen px-4 py-2"
+      >
+        <div class="font-semibold">{job.company}</div>
         <div>{job.position}</div>
         <div>{job.term}</div>
         <div>{job.status}</div>
-        <div class="w-fit break-all">{job.comments}</div>
+        <div class="w-fit break-all">
+          {#if job.comments == null}
+            <div />
+          {:else}
+            <a class="text-blue-500 underline" href={job.comments}
+              >{job.comments}</a
+            >
+          {/if}
+        </div>
       </div>
     {/each}
+    <!-- <div class="pagination">
+      {#each Array(totalPages) as _, idx}
+        <a href="/auth/jobs?limit={pageSize}&skip={pageSize * idx}">
+          {idx + 1}
+        </a>
+      {/each}
+    </div> -->
   {/if}
 </div>
