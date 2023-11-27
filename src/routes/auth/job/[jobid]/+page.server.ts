@@ -1,4 +1,4 @@
-import { fail, redirect } from "@sveltejs/kit";
+import { fail, redirect, type Actions } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ params, locals }) => {
@@ -19,4 +19,19 @@ export const load: PageServerLoad = async ({ params, locals }) => {
   const filter = data.find((job) => job.jobid == params.jobid);
 
   return { session, filter };
+};
+
+export const actions: Actions = {
+  changeStatus: async ({ request, locals, params }) => {
+    const body = await request.formData();
+    const status = await body.get("status");
+
+    const { data: updatedStatus, error: err } = await locals.supabase
+      .from("jobs")
+      .update({ status: status })
+      .eq("jobid", params.jobid)
+      .select();
+
+    return { updatedStatus };
+  },
 };

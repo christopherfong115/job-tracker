@@ -10,8 +10,13 @@ export const actions: Actions = {
     const company = await body.get("company");
     const notes = await body.get("notes");
 
+    console.log(company);
+
     const { data: note, error: err } = await locals.supabase
       .from("interview_notes")
-      .insert({ text: notes, userid: session.user.id, company: company });
+      .insert({ note: notes, userid: session.user.id, company: company })
+      .select("*");
+
+    console.log(note);
   },
 };

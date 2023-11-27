@@ -14,7 +14,7 @@
         {notes.company}
       </div>
       <div>
-        {notes.text}
+        {notes.note}
       </div>
     {/each}
   {/if}

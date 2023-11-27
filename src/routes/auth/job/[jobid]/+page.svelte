@@ -3,6 +3,7 @@
 
   export let data: PageServerData;
   const { session, filter } = data;
+  let editStatus = true;
 </script>
 
 <div
@@ -15,10 +16,42 @@
     <h1>{filter.position}</h1>
     <div>{filter.term}</div>
   </div>
-  <form class="flex gap-2">
-    <div>Status:</div>
-    {filter.status}
-  </form>
+  {#if editStatus == false}
+    <form method="POST" action="?/changeStatus" class="flex gap-2">
+      <div>Status:</div>
+      <input
+        class="outline"
+        type="text"
+        required
+        name="status"
+        maxlength="10"
+        placeholder={filter.status}
+      />
+      <button
+        on:click={(e) => {
+          e.preventDefault();
+          editStatus = true;
+        }}>Save</button
+      >
+    </form>
+  {:else}
+    <div class="flex gap-2">
+      <div>Status:</div>
+      <div>
+        {filter.status}
+      </div>
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div
+        on:click={(e) => {
+          editStatus = false;
+        }}
+        class="pl-10 underline text-blue-500"
+      >
+        Edit
+      </div>
+    </div>
+  {/if}
   <div>
     <div>Applied on:</div>
     {new Date(Date.parse(filter.created_at)).toDateString()}
