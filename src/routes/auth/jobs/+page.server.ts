@@ -25,6 +25,7 @@ export const load: PageServerLoad = async ({ url, locals }) => {
       .eq("userid", session.user.id)
       .order("created_at", { ascending: true });
     // .range(skip, limit);
+    console.log(jobs);
     return jobs;
   }
 
