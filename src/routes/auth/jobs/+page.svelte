@@ -19,7 +19,7 @@
   const jobsSearch: Job[] =
     jobs?.map((job: Job) => ({
       ...job,
-      searchTerms: `${job.id} ${job.company} ${job.position} ${job.term} ${job.comments} ${job.jobid}`,
+      searchTerms: `${job.id} ${job.company} ${job.position} ${job.term} ${job.comments} ${job.jobid} ${job.status}`,
     })) || [];
 
   const searchStore = createSearchStore(jobsSearch);
