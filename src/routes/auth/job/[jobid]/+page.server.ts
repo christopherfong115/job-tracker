@@ -32,6 +32,8 @@ export const actions: Actions = {
       .eq("jobid", params.jobid)
       .select();
 
-    return { updatedStatus };
+    console.log(updatedStatus);
+
+    return { updatedStatus, success: true };
   },
 };

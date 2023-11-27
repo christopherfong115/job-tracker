@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { PageServerData } from "./$types";
+  import type { ActionData, PageServerData } from "./$types";
 
   export let data: PageServerData;
+  export let form: ActionData;
   const { session, filter } = data;
   let editStatus = true;
 </script>
@@ -9,8 +10,14 @@
 <div
   class="flex flex-col gap-5 w-fit absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 outline shadow-2xl p-10"
 >
-  <h1 class="font-extrabold underline decoration-2 decoration-red-500">
-    {filter.company}
+  <a
+    class="font-bold hover:underline decoration-blue-500 decoration-2 w-fit mx-auto bg-slate-400 rounded-full px-3 text-center hover:bg-slate-300"
+    href="/auth/jobs">{"x"}</a
+  >
+  <h1 class="font-extrabold">
+    <div class="underline decoration-2 decoration-red-500">
+      {filter.company}
+    </div>
   </h1>
   <div class="flex gap-10">
     <h1>{filter.position}</h1>
@@ -27,14 +34,9 @@
         maxlength="10"
         placeholder={filter.status}
       />
-      <button
-        on:click={(e) => {
-          e.preventDefault();
-          editStatus = true;
-        }}>Save</button
-      >
+      <button>Save</button>
     </form>
-  {:else}
+  {:else if editStatus}
     <div class="flex gap-2">
       <div>Status:</div>
       <div>

@@ -10,6 +10,7 @@
     ["Resume", "/auth/resume"],
     ["Jobs List", "/auth/jobs"],
     ["Interview", "/auth/interview"],
+    ["+ Jobs", "/auth/create/job"],
   ];
 
   const { supabase, session } = data;
