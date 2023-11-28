@@ -2,7 +2,7 @@
   import type { PageServerData } from "./$types";
 
   export let data: PageServerData;
-  const { users } = data;
+  const { users, session } = data;
 </script>
 
 <div class="bg-gradient-to-b from-white to-indigo-300 h-screen">
@@ -21,18 +21,23 @@
       </div>
     </div>
   </div>
-  <div class="flex gap-4 items-center">
+  <div
+    class="flex gap-4 items-center px-10 selection:bg-indigo-300 selection:text-white"
+  >
     Well come and explore our app! We have a whopping
     <div class="text-2xl font-extrabold">
       {users?.length || 0}
     </div>
-    users on our website! You too can join us!
+    users on our website! You too can join us! P.S. Our jobs page doesnt have pagination
+    yet so please make use of the fully functional search bar!
   </div>
 
-  <div>Register Here:</div>
-  <a
-    href="/signup"
-    class="text-5xl font-extrabold text-white bg-amber-400 block text-center py-10 rounded-2xl w-[90%] mx-auto"
-    >SIGN UP</a
-  >
+  {#if !session}
+    <div class="px-10">Register Here:</div>
+    <a
+      href="/signup"
+      class="text-5xl font-extrabold text-white bg-amber-400 block text-center py-10 rounded-2xl w-[90%] mx-auto"
+      >SIGN UP</a
+    >
+  {/if}
 </div>

@@ -54,7 +54,8 @@
 
 <div class="flex gap-4 items-center pb-4 px-4 text-sm">
   <div>
-    Little tip: Type 'today' to get all jobs that you have applied today!
+    Little tip: Type 'today' to get all jobs that you have applied today! To
+    find a specific day, type in the format 'ddd mmm dd yyyy'
   </div>
   <!-- <div>Sort Job Posting Applied Date:</div>
   <button

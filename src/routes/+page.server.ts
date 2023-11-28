@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ({ locals }) => {
     .from("users")
     .select("id");
 
-  console.log(users);
+  const session = await locals.getSession();
 
-  return { users };
+  return { users, session };
 };
