@@ -7,7 +7,6 @@
   export let data;
 
   const paths = [
-    ["Resume", "/auth/resume"],
     ["Jobs List", "/auth/jobs"],
     ["Interview", "/auth/interview"],
     ["+ Jobs", "/auth/create/job"],
