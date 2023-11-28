@@ -2,6 +2,8 @@
   import { createSearchStore, searchHandler } from "$lib/stores/jobs";
   import { onDestroy } from "svelte";
   import type { PageServerData } from "./$types";
+  import Icon from "@iconify/svelte";
+  import { enhance } from "$app/forms";
 
   let pageSize = 10;
   export let data: PageServerData;
@@ -15,7 +17,8 @@
     term: string;
     comments: string;
     jobid: string;
-    created_today: string;
+    updated_at: string;
+    favourite: boolean;
   };
 
   const jobsSearch: Job[] =
@@ -88,7 +91,27 @@
       <div
         class="grid grid-cols-6 bg-blue-950 hover:bg-sky-900 items-center max-w-screen px-4 py-2 text-white"
       >
-        <div class="font-semibold">{job.company}</div>
+        <div>{job.company}</div>
+        <!-- {#if job.favourite}
+          <form method="POST" action="?/favouriteJob" class="flex gap-4">
+            <div class="font-semibold">{job.company}</div>
+            <input name="jobid" value={job.jobid} hidden />
+            <button class="">
+              <Icon
+                class="bg-amber-500"
+                icon="material-symbols-light:star-outline"
+              />
+            </button>
+          </form>
+        {:else}
+          <form method="POST" action="?/unfavouriteJob" class="flex gap-4">
+            <div class="font-semibold">{job.company}</div>
+            <input name="jobid" value={job.jobid} hidden />
+            <button class="">
+              <Icon class="" icon="material-symbols-light:star-outline" />
+            </button>
+          </form>
+        {/if} -->
         <a class="font-bold" href="/auth/job/{job.jobid}">o</a>
         <div>{job.position}</div>
         <div>{job.term}</div>

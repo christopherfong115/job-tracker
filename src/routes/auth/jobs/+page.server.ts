@@ -1,4 +1,4 @@
-import { error, redirect } from "@sveltejs/kit";
+import { error, redirect, type Actions } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 import type { Session } from "@supabase/supabase-js";
 
@@ -31,4 +31,27 @@ export const load: PageServerLoad = async ({ url, locals }) => {
   return {
     jobs: getJobs(limit, skip, session),
   };
+};
+
+export const actions: Actions = {
+  favouriteJob: async ({ request, locals }) => {
+    const body = await request.formData();
+    const jobid = body.get("jobid");
+    const { data, error } = await locals.supabase
+      .from("jobs")
+      .update({ favourite: true })
+      .eq("jobid", jobid)
+      .select();
+    console.log(data);
+  },
+  unfavouriteJob: async ({ request, locals }) => {
+    const body = await request.formData();
+    const jobid = body.get("jobid");
+    const { data, error } = await locals.supabase
+      .from("jobs")
+      .update({ favourite: false })
+      .eq("jobid", jobid)
+      .select();
+    console.log(data);
+  },
 };
