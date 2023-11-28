@@ -13,7 +13,5 @@ export const load: PageServerLoad = async ({ locals }) => {
     .select("*")
     .eq("userid", session.user.id);
 
-  console.log(interviewNotes);
-
   return { session, interviewNotes };
 };

@@ -29,7 +29,11 @@
 <div class="bg-transparent">
   <div>
     <nav class="flex justify-between items-center p-7 font-bold">
-      <div><a href="/">Home</a></div>
+      <div class="flex gap-2">
+        <div><a href="/">Home</a></div>
+        <div>|</div>
+        <div><a href="/about">About</a></div>
+      </div>
       {#if data.session}
         <ul class="flex gap-5">
           {#each paths as path}

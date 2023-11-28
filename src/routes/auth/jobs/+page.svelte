@@ -86,7 +86,7 @@
   {:else}
     {#each $searchStore.filtered as job}
       <div
-        class="grid grid-cols-6 bg-slate-200 items-center max-w-screen px-4 py-2"
+        class="grid grid-cols-6 bg-blue-950 hover:bg-sky-900 items-center max-w-screen px-4 py-2 text-white"
       >
         <div class="font-semibold">{job.company}</div>
         <a class="font-bold" href="/auth/job/{job.jobid}">o</a>
@@ -97,7 +97,7 @@
           {#if job.comments == null}
             <div />
           {:else}
-            <a class="text-blue-500 underline" href={job.comments}
+            <a class="text-amber-500 underline" href={job.comments}
               >{job.comments}</a
             >
           {/if}

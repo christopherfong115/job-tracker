@@ -31,6 +31,9 @@
     users on our website! You too can join us! P.S. Our jobs page doesnt have pagination
     yet so please make use of the fully functional search bar!
   </div>
+  <div class="px-10 selection:bg-indigo-300 selection:text-white">
+    Also we dont support mobile view lol thats not in the budget.
+  </div>
 
   {#if !session}
     <div class="px-10">Register Here:</div>
