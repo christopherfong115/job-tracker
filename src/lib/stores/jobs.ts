@@ -26,7 +26,14 @@ export const searchHandler = <T extends Record<PropertyKey, any>>(
   store: SearchStoreModel<T>
 ) => {
   const searchTerm = store.search ? store.search.toLowerCase() : "";
-  store.filtered = store.data.filter((user) => {
-    return user.searchTerms.toLowerCase().includes(searchTerm);
-  });
+  if (searchTerm == "today") {
+    const todayDate = new Date().toDateString();
+    store.filtered = store.data.filter((user) => {
+      return user.searchTerms.includes(todayDate);
+    });
+  } else {
+    store.filtered = store.data.filter((user) => {
+      return user.searchTerms.toLowerCase().includes(searchTerm);
+    });
+  }
 };

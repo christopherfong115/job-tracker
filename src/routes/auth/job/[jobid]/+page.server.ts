@@ -36,4 +36,11 @@ export const actions: Actions = {
 
     return { updatedStatus, success: true };
   },
+  deleteJob: async ({ locals, params }) => {
+    const { data: deleted, error: err } = await locals.supabase
+      .from("jobs")
+      .delete()
+      .eq("jobid", params.jobid);
+    throw redirect(303, "/auth/jobs");
+  },
 };

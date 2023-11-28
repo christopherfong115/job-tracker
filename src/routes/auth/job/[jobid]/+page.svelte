@@ -8,12 +8,17 @@
 </script>
 
 <div
-  class="flex flex-col gap-5 w-fit absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 outline shadow-2xl p-10"
+  class="flex flex-col gap-5 w-1/5 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 outline shadow-2xl p-10"
 >
-  <a
-    class="font-bold hover:underline decoration-blue-500 decoration-2 w-fit mx-auto bg-slate-400 rounded-full px-3 text-center hover:bg-slate-300"
-    href="/auth/jobs">{"x"}</a
-  >
+  <div class="flex justify-between">
+    <a
+      class="font-bold hover:underline decoration-blue-500 decoration-2 w-fit bg-slate-400 rounded-full px-3 text-center hover:bg-slate-300"
+      href="/auth/jobs">{"x"}</a
+    >
+    <form method="POST" action="?/deleteJob">
+      <button class="bg-red-500 text-white font-bold px-2">Delete Job</button>
+    </form>
+  </div>
   <h1 class="font-extrabold">
     <div class="underline decoration-2 decoration-red-500">
       {filter.company}

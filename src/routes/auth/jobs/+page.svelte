@@ -15,16 +15,21 @@
     term: string;
     comments: string;
     jobid: string;
+    created_today: string;
   };
+
   const jobsSearch: Job[] =
     jobs?.map((job: Job) => ({
       ...job,
-      searchTerms: `${job.id} ${job.company} ${job.position} ${job.term} ${job.comments} ${job.jobid} ${job.status}`,
+      searchTerms: `${job.id} ${job.company} ${job.position} ${job.term} ${
+        job.comments
+      } ${job.jobid} ${job.status} ${new Date(job.created_at).toDateString()}`,
     })) || [];
 
   const searchStore = createSearchStore(jobsSearch);
 
   const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
+
   onDestroy(() => {
     unsubscribe();
   });
@@ -33,11 +38,33 @@
 <div>
   <input
     bind:value={$searchStore.search}
-    class="px-4 w-5/6 mx-auto mb-5 py-2 rounded-2xl outline outline-offset-4 outline-slate-500 translate-x-4 shadow-2xl font-bold text-white bg-slate-500"
+    class="px-4 w-1/3 mx-auto mb-5 py-2 rounded-2xl outline outline-offset-4 outline-slate-500 translate-x-4 shadow-2xl font-bold text-white bg-slate-500"
     placeholder="Search for your jobs..."
     type="text"
     maxlength="1000"
   />
+  <button
+    on:click={(e) => {
+      $searchStore.search = "";
+    }}
+    class="z-50 absolute font-extrabold text-white translate-y-2 -translate-x-4 bg-slate-500 pl-2"
+    >X</button
+  >
+</div>
+
+<div class="flex gap-4 items-center pb-4 px-4 text-sm">
+  <div>
+    Little tip: Type 'today' to get all jobs that you have applied today!
+  </div>
+  <!-- <div>Sort Job Posting Applied Date:</div>
+  <button
+    class="bg-emerald-500 px-4 py-1 rounded-2xl hover:bg-emerald-400 text-white font-bold"
+    >Up</button
+  >
+  <button
+    class="bg-red-500 hover:bg-red-400 text-white font-bold px-4 py-1 rounded-2xl"
+    >Down</button
+  > -->
 </div>
 
 <div class="flex flex-col gap-2">
