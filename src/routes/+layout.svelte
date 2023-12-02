@@ -8,9 +8,8 @@
 
   const paths = [
     ["Jobs List", "/auth/jobs"],
-    ["+ Jobs", "/auth/create/job"],
     ["Interview", "/auth/interview"],
-    ["+ Note", "/auth/create/note"],
+    ["Site Updates", "/updates"],
   ];
 
   const { supabase, session } = data;
@@ -27,8 +26,8 @@
   });
 </script>
 
-<div class="bg-transparent">
-  <div>
+<div class="bg-black/95 text-white">
+  <div class="text-white">
     <nav class="flex justify-between items-center p-7 font-bold">
       <div class="flex gap-2">
         <div><a href="/">Home</a></div>
@@ -45,7 +44,13 @@
             </li>
           {/each}
         </ul>
-        <form action="/logout" method="POST"><button>Signout</button></form>
+        <form
+          class="hover:text-blue-500 hover:underline decoration-blue-500"
+          action="/logout"
+          method="POST"
+        >
+          <button>Signout</button>
+        </form>
       {:else}
         <div class="flex gap-4">
           <div class="hover:text-blue-600 hover:underline">

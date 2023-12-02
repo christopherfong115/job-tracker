@@ -55,7 +55,9 @@
   >
 </div>
 
-<div class="flex gap-4 items-center pb-4 px-4 text-sm">
+<div
+  class="flex gap-4 items-center pb-4 px-4 text-sm justify-between text-white"
+>
   <div>
     Little tip: Type 'today' to get all jobs that you have applied today! To
     find a specific day, type in the format 'ddd mmm dd yyyy'
@@ -69,11 +71,17 @@
     class="bg-red-500 hover:bg-red-400 text-white font-bold px-4 py-1 rounded-2xl"
     >Down</button
   > -->
+  <div>
+    <a
+      class="text-xl font-bold outline px-4 rounded-2xl hover:outline-blue-500 hover:text-blue-500 py-1"
+      href="/auth/create/job">+ Job</a
+    >
+  </div>
 </div>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-4">
   <div
-    class="grid grid-cols-6 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center px-4 py-2"
+    class="grid grid-cols-6 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center px-4 py-2 text-slate-500"
   >
     <div>Company</div>
     <div>View</div>
@@ -89,7 +97,7 @@
   {:else}
     {#each $searchStore.filtered as job}
       <div
-        class="grid grid-cols-6 bg-blue-950 hover:bg-sky-900 items-center max-w-screen px-4 py-2 text-white"
+        class="grid grid-cols-6 bg-blue-700 bg-opacity-20 outline outline-white/50 rounded-2xl hover:bg-sky-700 items-center max-w-screen px-4 py-2 text-white"
       >
         <div>{job.company}</div>
         <!-- {#if job.favourite}

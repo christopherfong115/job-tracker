@@ -4,8 +4,9 @@
 <form
   method="POST"
   action="?/addJob"
-  class="flex flex-col outline w-1/2 p-10 absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 gap-2"
+  class="flex flex-col outline w-1/2 p-10 absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 gap-2 text-black"
 >
+  <a class="font-extrabold px-2" href="/auth/jobs">X</a>
   <div class="underline font-bold decoration-purple-500 decoration-2">
     Company:
   </div>

@@ -5,7 +5,8 @@
   const { users, session } = data;
 </script>
 
-<div class="bg-gradient-to-b from-white to-indigo-300 h-screen">
+<!-- bg-gradient-to-b from-white to-indigo-300  -->
+<div class="text-white h-screen">
   <div class="grid grid-cols-2 justify-items-center items-center p-10">
     <div
       class="font-extrabold underline underline-offset-8 decoration-blue-500 decoration-4 text-2xl selection:bg-indigo-300 selection:text-white"

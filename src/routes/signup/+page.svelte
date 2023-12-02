@@ -6,7 +6,7 @@
   method="POST"
   action="?/register"
   use:enhance
-  class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col gap-4 outline py-10 px-16 bg-gradient-to-bl from-white to-sky-400"
+  class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col gap-4 outline py-10 px-16 bg-sky-400"
 >
   <h1 class="text-center font-bold">Register</h1>
   <div>Full Name</div>

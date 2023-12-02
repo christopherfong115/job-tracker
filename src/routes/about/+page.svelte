@@ -1,4 +1,4 @@
-<div class="w-11/12 mx-auto text-center flex flex-col gap-2">
+<div class="w-11/12 mx-auto text-center flex flex-col gap-2 min-h-screen">
   <h1>
     This is me, I am currently at student at the University of Waterloo and this
     website was created to help me keep track of the jobs I applied to
@@ -8,7 +8,7 @@
     <img class="w-[250px] h-[450px] mx-auto" src="/aboutme.jpg" alt="me" />
     <div class="text-sm">This is a photo of me when I was in grade 1?</div>
   </div>
-  <div class="w-full h-1 bg-black" />
+  <div class="w-full h-1 bg-white" />
   <div>The objective:</div>
   <div>
     The purpose of this website was to help me log my journey of jobs I applied

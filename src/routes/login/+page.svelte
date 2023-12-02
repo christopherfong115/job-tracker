@@ -6,7 +6,7 @@
   method="POST"
   use:enhance
   action="?/login"
-  class="absolute left-1/2 top-1/2 w-[35%] -translate-y-1/2 -translate-x-1/2 flex flex-col gap-2"
+  class="absolute left-1/2 top-1/2 w-[35%] -translate-y-1/2 -translate-x-1/2 flex flex-col gap-2 text-black"
 >
   <div class="text-2xl font-bold underline decoration-purple-600 decoration-4">
     Login
@@ -30,4 +30,11 @@
   <button class="py-2 px-4 rounded-2xl bg-purple-500 text-white font-bold"
     >Login</button
   >
+  <div>
+    Don't have an account?
+    <a
+      class="text-blue-500 underline decoration-blue-500 font-semibold"
+      href="/signup">Create an account.</a
+    >
+  </div>
 </form>
