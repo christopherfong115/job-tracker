@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="flex flex-col gap-5 w-1/5 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 outline shadow-2xl p-10"
+  class="flex flex-col gap-5 w-1/5 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 outline shadow-2xl p-10 text-black"
 >
   <div class="flex justify-between">
     <a
