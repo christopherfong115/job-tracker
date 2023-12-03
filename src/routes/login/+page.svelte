@@ -6,14 +6,14 @@
   method="POST"
   use:enhance
   action="?/login"
-  class="absolute left-1/2 top-1/2 w-[35%] -translate-y-1/2 -translate-x-1/2 flex flex-col gap-2 text-black"
+  class="absolute left-1/2 top-1/2 w-[35%] -translate-y-1/2 -translate-x-1/2 flex flex-col gap-2 text-white"
 >
   <div class="text-2xl font-bold underline decoration-purple-600 decoration-4">
     Login
   </div>
   <div>Email</div>
   <input
-    class="bg-slate-200/60 py-4 px-4 w-full"
+    class="bg-slate-100 py-4 px-4 w-full text-black"
     type="email"
     name="email"
     required
@@ -21,7 +21,7 @@
   />
   <div>Password</div>
   <input
-    class="bg-slate-200/60 py-4 px-4 w-full"
+    class="bg-slate-100 py-4 px-4 w-full text-black"
     type="password"
     name="password"
     required

@@ -26,7 +26,7 @@
   });
 </script>
 
-<div class="bg-black/95 text-white">
+<div class="text-white">
   <div class="text-white">
     <nav class="flex justify-between items-center p-7 font-bold">
       <div class="flex gap-2">
@@ -65,3 +65,9 @@
   </div>
   <slot />
 </div>
+
+<style>
+  :global(body) {
+    background-color: #0d0d0d;
+  }
+</style>

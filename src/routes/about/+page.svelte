@@ -1,4 +1,4 @@
-<div class="w-11/12 mx-auto text-center flex flex-col gap-2 min-h-screen">
+<div class="w-11/12 mx-auto text-center flex flex-col gap-2">
   <h1>
     This is me, I am currently at student at the University of Waterloo and this
     website was created to help me keep track of the jobs I applied to
