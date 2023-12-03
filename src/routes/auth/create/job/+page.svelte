@@ -4,17 +4,17 @@
 <form
   method="POST"
   action="?/addJob"
-  class="flex flex-col outline w-1/2 p-10 absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 gap-2 text-black"
+  class="flex flex-col outline w-1/2 p-10 absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 gap-2"
 >
   <a class="font-extrabold px-2" href="/auth/jobs">X</a>
   <div class="underline font-bold decoration-purple-500 decoration-2">
     Company:
   </div>
   <input
-    class="outline outline-1 outline-slate-500 px-2 py-1"
+    class="outline outline-1 outline-slate-500 px-2 py-1 text-black"
     name="company"
     required
-    maxlength="25"
+    maxlength="40"
     type="text"
     placeholder="Amazon"
   />
@@ -22,10 +22,10 @@
     Position:
   </div>
   <input
-    class="outline outline-1 outline-slate-500 px-2 py-1"
+    class="outline outline-1 outline-slate-500 px-2 py-1 text-black"
     name="position"
     required
-    maxlength="25"
+    maxlength="40"
     type="text"
     placeholder="SWE"
   />
@@ -33,7 +33,7 @@
     Term:
   </div>
   <select
-    class="outline outline-1 outline-slate-500 px-2 w-fit"
+    class="outline outline-1 outline-slate-500 px-2 w-fit text-black"
     name="term"
     required
   >
@@ -45,10 +45,10 @@
     Status:
   </div>
   <input
-    class="outline outline-1 outline-slate-500 px-2 py-1"
+    class="outline outline-1 outline-slate-500 px-2 py-1 text-black"
     name="status"
     required
-    maxlength="25"
+    maxlength="40"
     type="text"
     placeholder="OA, Accepted, Interview, etc."
   />
@@ -56,10 +56,10 @@
     Comments:
   </div>
   <input
-    class="outline outline-1 outline-slate-500 px-2 py-1"
+    class="outline outline-1 outline-slate-500 px-2 py-1 text-black"
     name="comments"
     required
-    maxlength="250"
+    maxlength="400"
     type="text"
     placeholder="Anything such as related links or reminders"
   />

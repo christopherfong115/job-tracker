@@ -81,7 +81,7 @@
 
 <div class="flex flex-col gap-4">
   <div
-    class="grid grid-cols-6 font-extrabold outline bg-gradient-to-b from-white to-amber-200 items-center px-4 py-2 text-slate-500"
+    class="grid grid-cols-6 font-extrabold outline bg-gradient-to-b from-white to-amber-400 items-center px-4 py-2 text-slate-600"
   >
     <div>Company</div>
     <div>View</div>

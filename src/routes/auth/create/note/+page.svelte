@@ -2,7 +2,7 @@
   import { enhance } from "$app/forms";
 </script>
 
-<div class="text-black bg-white pt-32">
+<div class="text-black pt-32">
   <form
     method="POST"
     use:enhance
