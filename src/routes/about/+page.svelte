@@ -5,8 +5,10 @@
     externally. :)
   </h1>
   <div>
-    <img class="w-[250px] h-[450px] mx-auto" src="/aboutme.jpg" alt="me" />
-    <div class="text-sm">This is a photo of me when I was in grade 1?</div>
+    <img class="w-[350px] h-[450px] mx-auto" src="/aboutmepic.jpg" alt="me" />
+    <div class="text-sm">
+      This is a photo of me when I went to NYC at a breakfast diner
+    </div>
   </div>
   <div class="w-full h-1 bg-white" />
   <div>The objective:</div>
